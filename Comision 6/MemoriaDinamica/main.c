@@ -20,6 +20,8 @@ void generarArregloVoid(int** arregloDinamico, int tam)
     // arregloDinamico[0][i]
    }
 
+   free(*arregloDinamico);
+
 }
 
 
@@ -30,32 +32,29 @@ int main()
    int* arregloDinamico;
    srand(time(NULL));
    int tam;
-//   printf("Ingrese un tamano para el arreglo\n");
-//   scanf("%i",&tam);
-//   generarArregloVoid(&arregloDinamico,tam);
-   //arregloDinamico = generarArreglo(tam);
-   //arregloDinamico = (int*)malloc(sizeof(int)*tam);
+   printf("Ingrese un tamano para el arreglo\n");
+   scanf("%i",&tam);
+   generarArregloVoid(&arregloDinamico,tam);
+   arregloDinamico = generarArreglo(tam);
+  // arregloDinamico = (int*)malloc(sizeof(int)*tam);
 
    for (int i=0; i < tam ; i++)
    {
        *(arregloDinamico+i) = rand() % 50;
    }
 
-//   for (int i = 0 ; i < tam ; i++)
-//   {
-//       printf("%i\t",*(arregloDinamico+i));
-//   }
+   for (int i = 0 ; i < tam ; i++)
+   {
+       printf("%i\t",*(arregloDinamico+i));
+   }
 
+   free(arregloDinamico);
 
-   int* punterito = NULL;
-   printf("%x\n", &punterito);
-   printf("aca hay: %x", punterito);
-   generarArregloVoid(&punterito,5);
-
-
-
-
-
+  printf("aca se va a mostrar cualquier cosa\n");
+    for (int i = 0 ; i < tam ; i++)
+   {
+       printf("%i\t",*(arregloDinamico+i));
+   }
 
 
     return 0;
