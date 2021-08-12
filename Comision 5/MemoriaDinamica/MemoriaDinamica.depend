@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1628788136 source:c:\users\cmajo\onedrive - utn frmdp\escritorio\melipasar\utn\programacion y laboratorio ii\progiiylabii\comision 5\memoriadinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
