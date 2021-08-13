@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1628881631 source:c:\users\cmajo\onedrive - utn frmdp\escritorio\melipasar\utn\programacion y laboratorio ii\progiiylabii\comision 6\matrizdinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<malloc.h>
+
