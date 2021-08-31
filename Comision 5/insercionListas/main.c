@@ -212,6 +212,13 @@ int main()
     else
         printf("El dato no esta\n");
     nodo* busc = busquedaListaNodo(lista,5);
+    if (busc == NULL)
+    {
+        printf("No se encontro");
+    }
+    else
+        printf("%i",busc->dato);
+
     mostrarLista(busc); ///mostraria una sublista a partir de ese nodo
 
     return 0;
