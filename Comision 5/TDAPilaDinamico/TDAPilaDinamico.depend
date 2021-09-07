@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1631029117 source:c:\users\cmajo\utn\progiiylabii\comision 5\tdapiladinamico\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pila.h"
+
+1631029060 c:\users\cmajo\utn\progiiylabii\comision 5\tdapiladinamico\pila.h
+	<stdio.h>
+	<stdlib.h>
+
+1631029082 source:c:\users\cmajo\utn\progiiylabii\comision 5\tdapiladinamico\pila.c
+	"Pila.h"
+
