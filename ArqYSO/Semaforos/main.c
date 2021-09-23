@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
-#define SLOTS 2
+#define SLOTS 4
 #define buffer 100
 
 ///slots garantiza la cantidad maxima de items qie va a producir antes de que el otro consuma
@@ -15,6 +15,7 @@ void* producir()
      sem_wait(&slots);
      sem_wait(&mutex);
      printf("Produce item %i\n", i+1);
+     sleep(1);
      sem_post(&mutex);
      sem_post(&items);
  }
