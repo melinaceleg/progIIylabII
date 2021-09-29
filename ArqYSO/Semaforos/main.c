@@ -15,7 +15,6 @@ void* producir()
      sem_wait(&slots);
      sem_wait(&mutex);
      printf("Produce item %i\n", i+1);
-     sleep(1);
      sem_post(&mutex);
      sem_post(&items);
  }
