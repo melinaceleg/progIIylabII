@@ -81,7 +81,7 @@ void eliminarNodo(nodoA** A, telemento clave)
         }
 
 
-    }
+    }rutina
 
 }
 
