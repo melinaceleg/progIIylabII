@@ -137,7 +137,7 @@ int cantDatos()
     if (fp)
     {
         fseek(fp,0,SEEK_END);
-        cant= ftell(fp)/sizeof(Materia);
+        cant= ftell(fp)/sizeof(registroArchivo);
 
     }
     fclose(fp);
