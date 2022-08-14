@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1629998148 source:c:\users\cmajo\utn\progiiylabii\comision 5\tdapila\pila.c
-	"Pila.h"
-
-1629998148 c:\users\cmajo\utn\progiiylabii\comision 5\tdapila\pila.h
-	<stdio.h>
-	<stdlib.h>
-
