@@ -178,6 +178,85 @@ int buscarLista(nodo* lista, telemento dato)
 // o puedo:  return (lista != NULL && dato == lista->dato)
 
 }
+/**
+  1- el dato esta
+    a) en la cabecera
+    b) en el resto de la lista
+
+  2- el dato no este
+
+
+**/
+///lista desordenada
+void borrarDato(nodo** lista, telemento dato)
+{
+    nodo*seg,*ante, *aux;
+
+    if (*lista != NULL)
+    {
+        if ((*lista)->dato == dato) /// 1-a
+        {
+            aux = *lista;
+            *lista = (*lista)->siguiente;
+            free(aux);
+        }
+        else ///1-b
+        {
+            ante = *lista;
+            seg = (*lista)->siguiente;
+            while (seg != NULL && seg->dato != dato)
+            {
+                ante = seg;
+                seg=seg->siguiente;
+            }
+            if (seg != NULL) ///si encontro el dato, lo borro
+            {
+                ante->siguiente = seg->siguiente;
+                free(seg);
+            }
+        }
+    }
+
+
+
+}
+
+
+///lista ordenada
+void borrarDato(nodo** lista, telemento dato)
+{
+    nodo*seg,*ante, *aux;
+
+    if (*lista != NULL && dato >= (*lista)->dato)
+    {
+        if ((*lista)->dato == dato) /// 1-a
+        {
+            aux = *lista;
+            *lista = (*lista)->siguiente;
+            free(aux);
+        }
+        else ///1-b
+        {
+            ante = *lista;
+            seg = (*lista)->siguiente;
+            while (seg != NULL && seg->dato < dato)
+            {
+                ante = seg;
+                seg=seg->siguiente;
+            }
+            if (seg != NULL && seg->dato == dato) ///si encontro el dato, lo borro
+            {
+                ante->siguiente = seg->siguiente;
+                free(seg);
+            }
+        }
+    }
+
+
+
+}
+
+
 
 
 
