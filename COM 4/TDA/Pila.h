@@ -10,7 +10,7 @@ typedef char telemento; //alias
 typedef struct
 {
     telemento arreglo[50];
-    int tope; ///ultima posicion valida
+    int tope; ///ultima posicion valida (indice)
 }Pila;
 
 

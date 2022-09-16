@@ -18,7 +18,7 @@ void apilar(Pila* p, telemento dato)
 telemento desapilar(Pila* p)
 {
     telemento dato = (*p).arreglo[(*p).tope];
-    (*p).tope--;
+    (*p).tope--; ///decremento el indice
 
     return dato;
 }

@@ -268,6 +268,7 @@ int main()
     lista = NULL;
     insertarEnOrden(&lista,3);
     mostrarLista(lista);
+    borrarDato(&lista,3);
     //cargarLista(&lista);
     return 0;
 }
