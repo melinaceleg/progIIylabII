@@ -90,7 +90,7 @@ void insertarEnOrden(nodoD** lista, telemento dato)
         }
         else
         {
-            seg = (*lista)->siguiente;
+            seg = *lista;
             //ante = *lista;
             while (seg->siguiente != NULL && nuevo->dato > seg->dato)
             {
