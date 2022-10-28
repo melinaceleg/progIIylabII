@@ -45,7 +45,7 @@ Telemento sacaFila(Fila* F)
     }
     else
         (*F).pri = (*F).pri->sig;
-        free(aux);
+    free(aux);
 
     return elemento;
 }
