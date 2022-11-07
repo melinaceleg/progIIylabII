@@ -7,25 +7,20 @@ void inicPila(Pila* p)
 
 void apilar(Pila* p, telemento dato)
 {
-    if ((*p).tope < 49)
-    {
-        (*p).tope++;
-        (*p).arreglo[(*p).tope] = dato;
-    }
-
+  ////HACER
 }
 
 telemento desapilar(Pila* p)
 {
     telemento dato = (*p).arreglo[(*p).tope];
-    (*p).tope--; ///decremento el indice
+    (*p).tope--; 
 
     return dato;
 }
 
 telemento tope(Pila p)
 {
-    return p.arreglo[p.tope];
+ ////HACER
 }
 
 int pilavacia(Pila p)

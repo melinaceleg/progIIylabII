@@ -243,6 +243,7 @@ Si el avión se queda sin pasajeros (lista de pasajeros nula),
  elimine también ese nodo de avión.
 **/
 
+///se eliminan varios nodos de una lista segun cumplan con el parametro (dato > cotaEdad)
 void borrarPersonasGrandes(nodoPasajero** pasajeros, int cotaEdad)
 {
  nodoPasajero* aux;
@@ -279,6 +280,59 @@ void borrarPersonasGrandes(nodoPasajero** pasajeros, int cotaEdad)
 
 }
 
+
+void borrarTodosPasajeros(nodoPasajero** lista)
+{
+    nodoPasajero* aux;
+    while (*lista != NULL)
+    {
+        aux = *lista;
+        *lista = (*lista)->sig;
+        free(aux);
+    }
+}
+
+
+/**
+debo verificar si es en la cabecera si no es en el resto de la lista (seguidora) **/
+///esta ordenado por idAvion
+void eliminarAvionX(nodoAvion** aviones, int idAvion)
+{
+    nodoAvion* aux, *seg, *ante;
+  if (*aviones != NULL && (*aviones)->idAvion <= idAvion)
+  {
+      if ((*aviones)->idAvion == idAvion)
+      {
+          aux = *aviones;
+          borrarTodosPasajeros(&(aux->pasajeros));
+          *aviones = (*aviones)->sig;
+          free(aux);
+      }
+      else
+      {
+          ante = *lista;
+          seg = (*lista)->sig;
+          while (seg != NULL && seg->idAvion < idAvion)
+          {
+              ante = seg;
+              seg = seg->sig;
+          }
+          if (seg != NULL && seg->idAvion == idAvion)
+          {
+              borrarTodosPasajeros(&(seg->pasajeros));
+              ante->sig = seg->sig;
+              free(seg);
+          }
+      }
+
+
+  }
+
+
+}
+
+
+
 void borrarPersonasGrandesAvionX(nodoAvion** aviones, int idAvion, int cotaEdad)
 {
     nodoAvion* aux;
@@ -288,7 +342,7 @@ void borrarPersonasGrandesAvionX(nodoAvion** aviones, int idAvion, int cotaEdad)
         if((*aviones)->idAvion == idAvion)
         {
             borrarPersonasGrandes(&((*aviones)->pasajeros),cotaEdad);
-            if ((*aviones)->pasajeros == NULL)
+            if ((*aviones)->pasajeros == NULL) /// si la lista queda en null (cabecera)
             {
               aux = *aviones;
               *aviones = (*aviones)->sig;
@@ -307,7 +361,7 @@ void borrarPersonasGrandesAvionX(nodoAvion** aviones, int idAvion, int cotaEdad)
             if (seg != NULL && seg->idAvion == idAvion)
             {
                 borrarPersonasGrandes(&seg->pasajeros,cotaEdad);
-                if (seg->pasajeros == NULL)
+                if (seg->pasajeros == NULL) ///si la lista queda en null (seguidora)
                 {
                     aux = seg;
                     ante->sig = seg->sig;
